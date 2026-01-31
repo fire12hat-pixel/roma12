@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<title>Світ природи</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+        background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
+        color: #eafaf1;
+        min-height: 100vh;
+    }
+
+    header {
+        text-align: center;
+        padding: 50px 20px;
+        background: radial-gradient(circle at top, #2ecc71, transparent);
+    }
+
+    header h1 {
+        font-size: 3rem;
+        color: #a7f3d0;
+        letter-spacing: 2px;
+    }
+
+    header p {
+        max-width: 700px;
+        margin: 15px auto;
+        font-size: 1.1rem;
+        color: #d1fae5;
+    }
+
+    .nature {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+        padding: 50px;
+    }
+
+    .card {
+        background: rgba(0, 0, 0, 0.35);
+        border-radius: 20px;
+        padding: 25px;
+        box-shadow: 0 0 25px rgba(0, 255, 150, 0.2);
+        transition: transform 0.4s, box-shadow 0.4s;
+        cursor: pointer;
+    }
+
+    .card:hover {
+        transform: translateY(-12px) scale(1.03);
+        box-shadow: 0 0 40px rgba(0, 255, 150, 0.6);
+    }
+
+    .card h2 {
+        color: #6ee7b7;
+        margin-bottom: 10px;
+    }
+
+    .card p {
+        line-height: 1.6;
+        color: #ecfdf5;
+    }
+
+    .info {
+        max-width: 800px;
+        margin: 20px auto 60px;
+        background: rgba(0, 0, 0, 0.4);
+        border-radius: 18px;
+        padding: 30px;
+        box-shadow: 0 0 30px rgba(0, 255, 120, 0.4);
+        animation: fadeIn 1s ease;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    footer {
+        text-align: center;
+        padding: 20px;
+        color: #9ca3af;
+        font-size: 0.9rem;
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Світ природи</h1>
+    <p>Природа — це гармонія життя, джерело натхнення та основа існування людства.</p>
+</header>
+
+<section class="nature">
+    <div class="card" onclick="showInfo('Ліси', 'Ліси очищають повітря, виробляють кисень та є домом для більшості наземних видів тварин.')">
+        <h2>🌲 Ліси</h2>
+        <p>Зелені легені нашої планети.</p>
+    </div>
+
+    <div class="card" onclick="showInfo('Гори', 'Гори впливають на клімат, накопичують прісну воду та вражають своєю величчю.')">
+        <h2>🏔️ Гори</h2>
+        <p>Символ сили та спокою.</p>
+    </div>
+
+    <div class="card" onclick="showInfo('Океани', 'Океани покривають понад 70% поверхні Землі та регулюють глобальний клімат.')">
+        <h2>🌊 Океани</h2>
+        <p>Колиска життя на Землі.</p>
+    </div>
+
+    <div class="card" onclick="showInfo('Тварини', 'Тваринний світ надзвичайно різноманітний і відіграє важливу роль в екосистемах.')">
+        <h2>🐾 Тварини</h2>
+        <p>Частина природного балансу.</p>
+    </div>
+
+    <div class="card" onclick="showInfo('Рослини', 'Рослини забезпечують їжу, кисень та сировину для життя людини.')">
+        <h2>🌿 Рослини</h2>
+        <p>Основа життя на планеті.</p>
+    </div>
+
+    <div class="card" onclick="showInfo('Екологія', 'Збереження природи — ключ до майбутнього людства та планети.')">
+        <h2>♻️ Екологія</h2>
+        <p>Відповідальність кожного.</p>
+    </div>
+</section>
+
+<div class="info" id="info">
+    <h2>Натисніть на розділ</h2>
+    <p>Оберіть картку, щоб дізнатися більше про елемент природи.</p>
+</div>
+
+<footer>
+    © 2026 • Пізнавальний сайт про природу
+</footer>
+
+<script>
+    function showInfo(title, text) {
+        const info = document.getElementById('info');
+        info.innerHTML = `<h2>${title}</h2><p>${text}</p>`;
+    }
+</script>
+
+</body>
+</html>
